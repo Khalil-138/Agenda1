@@ -8,11 +8,11 @@ class Database {
     init() {
         // .env - dotenv
         this.db = new Sequelize({
-            database: 'exemplo',
-            host: 'localhost',
-            username: 'root',
-            password: '',
-            dialect: 'mysql'
+            database: process.env.DB_database ?? 'exemplo',
+            host: process.env.DB_host ?? 'localhost',
+            username: process.env.DB_username ?? 'root',
+            password: process.env.DB_Password ??'',
+            dialect: process.env.DB_Dialect ?? 'mysql'
         })
     }
 }
